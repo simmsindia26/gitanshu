@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Gitanshu Diagnostic - Next-Gen Modern Medical UI Design System
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Premium Medical Color Palette */
+  --primary: #0a3d82;
+  --primary-deep: #062654;
+  --primary-light: #eef6ff;
+  --primary-hover: #083068;
+  --primary-glow: rgba(10, 61, 130, 0.12);
+
+  --secondary: #10b981;
+  --secondary-dark: #059669;
+  --secondary-light: #ecfdf5;
+  --secondary-glow: rgba(16, 185, 129, 0.15);
+
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #f0fdfa;
+  
+  --dark: #0f172a;
+  --dark-soft: #1e293b;
+  --dark-muted: #334155;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  
+  --bg-main: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+
+  --border-light: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-glass: rgba(255, 255, 255, 0.6);
+
+  /* Modern Layered Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 4px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(10, 61, 130, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 40px -6px rgba(10, 61, 130, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s var(--ease-smooth);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent auto-zoom on mobile safari by ensuring inputs are at least 16px */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.section {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 55px 0;
+  }
+}
+
+/* Section Header */
+.section-tag-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 61, 130, 0.06);
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+  border: 1px solid rgba(10, 61, 130, 0.12);
+}
+
+.section-tag-wrap.green {
+  background: var(--secondary-light);
+  color: var(--secondary-dark);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 35px;
+  }
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .section-desc {
+    font-size: 0.95rem;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0a3d82 0%, #0d54b8 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(10, 61, 130, 0.25);
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background: linear-gradient(135deg, #072e63 0%, #0a3d82 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 61, 130, 0.35);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.btn-secondary:hover, .btn-secondary:active {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--primary);
+  border: 1.5px solid rgba(10, 61, 130, 0.2);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-outline:hover, .btn-outline:active {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  color: var(--primary);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 480px) {
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Animations */
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  display: inline-block;
+  animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
